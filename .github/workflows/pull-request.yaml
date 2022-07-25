@@ -1,0 +1,16 @@
+name: PR test
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ArtiomTr/jest-coverage-report-action@v2.0.9
+        with:
+          test-script: npm test
+
+
